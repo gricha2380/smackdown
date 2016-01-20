@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hero Smackdown: Battle your favorite heroes and see who wins!</title>
+        <meta name="description" content="Battle your favorite comic book characters against each other using their official power rating stats!">
+        <meta name="viewport" content="width=device-width" initial-scale=1>
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+<!-- load select menu -->
+    <link href="js/select2/select2.css" rel="stylesheet"/>
+    
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Main HTML -->
+
+        <div id="victory" class="displayNone" onclick="hideVictory()">
+            <div class="heroName" id="results"></div>
+            <div class="winBar"><div class="wins"></div></div>
+            <div class="explain">Strength and speed were more than enough to overwhelm this enemy!</div>
+            <input class="hideVictory" onclick="hideVictory()" type="button">
+        </div>
+
+        <div id="noUsers" class="displayNone" onclick="hideNoUsers()">
+            <div class="heroName" id="results">Uh Oh...</div>
+            <div class="winBar"><div class="explain"><span class="bold">Two</span> characters must be selected for a battle!</div></div>
+            <input class="hideVictory" onclick="hideNoUsers()" type="button">
+        </div>
+
+       <div id="draw" class="displayNone" onclick="hideDraw()">
+            <div class="heroName" id="results">It looks like we have...</div>
+            <div class="winBar"><div class="draw"></div></div>
+            <div class="explain">When the immovable object meets the unstoppable force they realize that ultimately both must back down...</div>
+            <input class="hideVictory" onclick="hideDraw()" type="button">
+        </div>
+
+
+        <div id="header">
+            <div id="headerInner"><div id="topInner">
+            <div class="social"></div><div class="logo"></div><div class="catchphrase">Two Heroes. One Winner.</div>
+        </div> <!-- end top inner -->
+            <ul id="navMenu"><li><a href="index.html" class="active" title="Battle your favorite heroes against each other!">Battle Room</a></li><li><a href="list.html" title="search individual character bios and stats">List Characters</a></li><li><a href="#" title="About Us">About</a></li><li><a href="#" title="Kick back and discuss your favorite characters and comics.">Forum</a></li></ul>
+            </div>
+        </div>
+
+        <div id="container">
+        <div id="leftBox">
+        <div class="topSpacer">
+            <div class="actionButtons left">
+                <a class="clearBtn" onclick="clearP1()">Clear</a>
+                <a onclick="randomP1()" class="random">Random</a>
+            </div> <!-- end actionButtons -->
+            <img src="img/blank.png" class="heroImg" id="heroImg">
+        </div>  <!-- end topSpacer -->       
+               <input type="hidden" class="bigdrop" id="playerOneName" style="width:400px">
+
+            <div id="playerOne" class="playerBox">
+                <div class="stats">
+                    <div class="numberHeader"><div class="num">1</div><div class="num">2</div><div class="num">3</div><div class="num">4</div><div class="num">5</div><div class="num">6</div><div class="num">7</div></div>
+                    <div class="durability row">
+                        <div class="rowTitle">Durability</div>
+                        <div class="box0 fill"></div>
+                        <div class="box0"></div>
+                        <div class="box0"></div>
+                        <div class="box0"></div>
+                        <div class="box0"></div>
+                        <div class="box0"></div>
+                        <div class="box0"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Energy</div>                    
+                        <div class="box1 fill"></div>
+                        <div class="box1"></div>
+                        <div class="box1"></div>
+                        <div class="box1"></div>
+                        <div class="box1"></div>
+                        <div class="box1"></div>
+                        <div class="box1"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Fighting</div>                    
+                        <div class="box2 fill"></div>
+                        <div class="box2"></div>
+                        <div class="box2"></div>
+                        <div class="box2"></div>
+                        <div class="box2"></div>
+                        <div class="box2"></div>
+                        <div class="box2"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Intelligence</div>                    
+                        <div class="box3 fill"></div>
+                        <div class="box3"></div>
+                        <div class="box3"></div>
+                        <div class="box3"></div>
+                        <div class="box3"></div>
+                        <div class="box3"></div>
+                        <div class="box3"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Speed</div>                    
+                        <div class="box4 fill"></div>
+                        <div class="box4"></div>
+                        <div class="box4"></div>
+                        <div class="box4"></div>
+                        <div class="box4"></div>
+                        <div class="box4"></div>
+                        <div class="box4"></div>
+                    </div> 
+                    <div class="energy row">
+                        <div class="rowTitle">Strength</div>                    
+                        <div class="box5 fill"></div>
+                        <div class="box5"></div>
+                        <div class="box5"></div>
+                        <div class="box5"></div>
+                        <div class="box5"></div>
+                        <div class="box5"></div>
+                        <div class="box5"></div>
+                    </div>                                                                               
+                </div>
+                <div class="bioSpacer"><div class="bio" id="bio"></div></div>
+            </div>
+        </div> <!-- end leftBox -->
+
+        <input type="button"  id="fightButton" onclick="showVictory()">
+
+
+        <div id="rightBox">
+        <div class="topSpacer">
+            <div class="actionButtons right">
+                <a onclick="clearP2()" class="clearBtn">Clear</a>
+                <a onclick="randomP2()" class="random">Random</a>
+            </div> <!-- end actionButtons -->
+            
+            <img src="img/blank.png" class="heroImg" id="heroImg2">
+
+        </div>  <!-- end topSpacer -->       
+
+
+            <input type="hidden" class="bigdrop" id="playerTwoName" style="width:400px"/>
+
+            <div id="playerTwo" class="playerBox">
+                <div class="stats">
+                    <div class="numberHeader"><div class="num">1</div><div class="num">2</div><div class="num">3</div><div class="num">4</div><div class="num">5</div><div class="num">6</div><div class="num">7</div></div>
+                    <div class="durability row">
+                        <div class="rowTitle">Durability</div>
+                        <div class="boxB0 fill"></div>
+                        <div class="boxB0"></div>
+                        <div class="boxB0"></div>
+                        <div class="boxB0"></div>
+                        <div class="boxB0"></div>
+                        <div class="boxB0"></div>
+                        <div class="boxB0"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Energy</div>                    
+                        <div class="boxB1 fill"></div>
+                        <div class="boxB1"></div>
+                        <div class="boxB1"></div>
+                        <div class="boxB1"></div>
+                        <div class="boxB1"></div>
+                        <div class="boxB1"></div>
+                        <div class="boxB1"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Fighting</div>                    
+                        <div class="boxB2 fill"></div>
+                        <div class="boxB2"></div>
+                        <div class="boxB2"></div>
+                        <div class="boxB2"></div>
+                        <div class="boxB2"></div>
+                        <div class="boxB2"></div>
+                        <div class="boxB2"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Intelligence</div>                    
+                        <div class="boxB3 fill"></div>
+                        <div class="boxB3"></div>
+                        <div class="boxB3"></div>
+                        <div class="boxB3"></div>
+                        <div class="boxB3"></div>
+                        <div class="boxB3"></div>
+                        <div class="boxB3"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Speed</div>                    
+                        <div class="boxB4 fill"></div>
+                        <div class="boxB4"></div>
+                        <div class="boxB4"></div>
+                        <div class="boxB4"></div>
+                        <div class="boxB4"></div>
+                        <div class="boxB4"></div>
+                        <div class="boxB4"></div>
+                    </div> 
+                    <div class="energy row">
+                        <div class="rowTitle">Strength</div>                    
+                        <div class="boxB5 fill"></div>
+                        <div class="boxB5"></div>
+                        <div class="boxB5"></div>
+                        <div class="boxB5"></div>
+                        <div class="boxB5"></div>
+                        <div class="boxB5"></div>
+                        <div class="boxB5"></div>
+                    </div>                                                                                       
+                </div>
+                <div class="bioSpacer"><div class="bio" id="bio2"></div></div>
+            </div>
+        </div> <!-- end rightBox -->
+
+<div id="advancedHolder">
+        <div id="advancedOptions">
+            <label class="advancedTitle" for="advancedToggle">Advanced Options</label>
+            <img src="img/arrow.png" id="advancedArrow" class="">
+        </div>
+        <div id="advancedBox">
+            <div class="weightDescription">This section allows you to customize the weight of each stat category. Use this to adjust for any handicap you find necessary.</div>
+            <form name="statForm" action="index.html" method="POST">
+            <div class="statBox">
+                <div class="statName">Durability</div>
+                <select id="setDurability">
+                    <option value="1" selected>Default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Energy</div>
+                <select id="setEnergy">
+                    <option value="1" selected>Default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Fighting</div>
+                <select id="setFighting">
+                    <option value="1" selected>Default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Intelligence</div>
+                <select id="setIntelligence">
+                    <option value="1" selected>Default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Speed</div>
+                <select id="setSpeed">
+                    <option value="1" selected>Default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Strength</div>
+                <select id="setStrength">
+                    <option value="1" selected>Default</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Save Values" id="save"><input type="reset" value="Reset" id="reset">
+        </form>
+        </div>
+    </div> <!-- end advancedHolder -->
+
+    <div id="about">
+    <div class="logo about"></div>
+        Hero Smackdown is not affiliated with Marvel.
+    </div>
+
+</div> <!-- end container -->
+<div id="footer">
+<div id="footerInner">
+    <ul id="footerNav">
+    <li><a href="#">Battle Room</a></li>
+    <li><a href="list.html">List Characters</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Forum</a></li>
+    </ul>
+    <div class="disclaimer">ALL NAMES OF CHARACTERS AND THE DISTINCTIVE LIKENESS(ES) THEREOF ARE TRADEMARKS OF <a href="http://marvel.com" target="_blank">MARVEL, INC.</a> COPYRIGHT© 2014 MARVEL.</div>
+</div>
+</div>
+
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/select2/select2.js"></script>
+        
+        <script>
+$('#playerOneName').select2('focus');
+
+            $( "#advancedOptions" ).click(function() 
+            {   
+                $( "#advancedBox" ).toggle( "fast" ); 
+                $("#advancedArrow").toggleClass("openArrow");
+            });
+
+        </script>
+
+
+
+
+<!-- PLAYER ONE -->
+        <script id="playerOneScript">
+        var termUsed;
+ $('#playerOneName').select2( {
+    minimumInputLength:2, 
+    placeholder:"Select Player One", 
+    ajax: { 
+    data:function (term, page) { return { q:show1, page:page,term:term }; }, 
+    dataType:"json", 
+    quietMillis:100, 
+    results:function (data, page) { return data;  }, 
+    url:"http://herosmackdown.com/liveCalls/heroList.php"},
+    formatResult: function(characters) { 
+            return "<div class='select2-user-result'>" + characters.name + " (" + characters.alias + ")" +  "</div>"; 
+        },
+        formatSelection: function(characters) { 
+            var holder21 = characters.name + " (" + characters.alias + ")";
+            return holder21;
+        },
+        initSelection : function (element, callback) {
+            var elementText = $(element).attr('data-init-text');
+            
+            callback({"name":elementText});
+        }
+});
+
+function show1(){
+
+    if($("#playerOneName").select2("val")>0){
+    $("#playerOneName").select2("val");
+    }
+
+}
+
+
+
+$('#playerOneName').on('select2-selecting', function(e){
+
+//fade image in
+//$("#heroImg").fadeOut("slow");
+document.getElementById('heroImg').setAttribute('src', e.object.thumbnail);
+document.getElementById('bio').innerHTML=e.object.description;
+//clear all of the bars
+clearBars();
+
+    for (var i = 0; i < e.object.Durability; i++)
+    {
+        document.getElementsByClassName('box0')[i].setAttribute('class','box0 fill');
+    }
+
+
+
+
+    for (var i = 0; i < e.object.Energy; i++)
+    {
+        document.getElementsByClassName('box1')[i].setAttribute('class','box1 fill');
+    }
+
+
+
+    for (var i = 0; i < e.object.Fighting; i++)
+    {
+        document.getElementsByClassName('box2')[i].setAttribute('class','box2 fill');
+    }
+
+
+    for (var i = 0; i < e.object.Intelligence; i++)
+    {
+        document.getElementsByClassName('box3')[i].setAttribute('class','box3 fill');
+    }
+
+
+
+
+    for (var i = 0; i < e.object.Speed; i++)
+    {
+        document.getElementsByClassName('box4')[i].setAttribute('class','box4 fill');
+    }
+
+
+    for (var i = 0; i < e.object.Strength; i++)
+    {
+        document.getElementsByClassName('box5')[i].setAttribute('class','box5 fill');
+    }
+
+            //send player one calculations
+            setPlayer1Levels(e.object.alias, e.object.name, e.object.Durability, e.object.Energy, e.object.Fighting, e.object.Intelligence, e.object.Speed, e.object.Strength);
+
+            //shake thumbnail
+
+});
+
+        </script>
+<!-- END PLAYER ONE -->
+
+<!-- PLAYER TWO -->
+        <script id="playerTwoScript">
+         var termUsed;
+        $("#playerTwoName").select2({
+        minimumInputLength: 3,
+        placeholder: 'Select Player Two',
+        ajax: {
+            url: "data/data.json",
+            dataType: 'json',
+            quietMillis: 100,
+            data: function(term, page) {
+                termUsed = term;
+                return {
+                    q: term, // search term
+                page_limit: 10
+                    
+                };
+            },
+            results: function(data, page ) {
+                var characterArray = new Array();
+
+                for (var i = 0; i < data.characters.length; i++) {
+                    if(data.characters[i].name.toUpperCase().indexOf(termUsed.toUpperCase())>=0 || data.characters[i].alias.toUpperCase().indexOf(termUsed.toUpperCase())>=0
+          ){
+                    characterArray.push(data.characters[i]);
+            }
+                }
+                
+                return { results: characterArray }
+            }
+        },
+        formatResult: function(characters) { 
+            
+            //console.log('we arrived at format results.');
+            return "<div class='select2-user-result'>" + characters.name + " (" + characters.alias + ")" +  "</div>"; 
+
+        },
+        formatSelection: function(characters) { 
+            //console.log('we arrived at format selection.');
+            
+            
+            var holder21 = characters.name + " (" + characters.alias + ")";
+            return holder21;
+            //THIS NEEDS TO RETURN BOTH ALIAS AND NAME characters.name + " (" + characters.alias + ")"
+        },
+        initSelection : function (element, callback) {
+            //console.log('we arrived at initial selection.');
+            var elementText = $(element).attr('data-init-text');
+            callback({"term":elementText});
+        }
+            });
+
+
+$('#playerTwoName').on('select2-selecting', function(e){
+
+document.getElementById('heroImg2').setAttribute('src', e.object.thumbnail);
+document.getElementById('bio2').innerHTML=e.object.description;
+
+
+    for (var i = 0; i < e.object.Durability; i++)
+    {
+        document.getElementsByClassName('boxB0')[i].setAttribute('class','boxB0 fill');
+    }
+
+
+
+    for (var i = 0; i < e.object.Energy; i++)
+    {
+        document.getElementsByClassName('boxB1')[i].setAttribute('class','boxB1 fill');
+    }
+
+
+
+    for (var i = 0; i < e.object.Fighting; i++)
+    {
+        document.getElementsByClassName('boxB2')[i].setAttribute('class','boxB2 fill');
+    }
+
+
+    for (var i = 0; i < e.object.Intelligence; i++)
+    {
+        document.getElementsByClassName('boxB3')[i].setAttribute('class','boxB3 fill');
+    }
+
+
+
+    for (var i = 0; i < e.object.Speed; i++)
+    {
+        document.getElementsByClassName('boxB4')[i].setAttribute('class','boxB4 fill');
+    }
+
+
+    for (var i = 0; i < e.object.Strength; i++)
+    {
+        document.getElementsByClassName('boxB5')[i].setAttribute('class','boxB5 fill');
+    }
+
+
+        //send player two calculations
+        setPlayer2Levels(e.object.alias, e.object.name, e.object.Durability, e.object.Energy, e.object.Fighting, e.object.Intelligence, e.object.Speed, e.object.Strength);
+});
+        </script>
+<!-- END PLAYER TWO -->
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-17373319-14', 'herosmackdown.com');
+          ga('send', 'pageview');
+
+      </script>
+    </body>
+</html>

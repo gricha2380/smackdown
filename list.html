@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hero Smackdown</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+<!-- load select menu -->
+    <link href="js/select2/select2.css" rel="stylesheet"/>
+    
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Main HTML -->
+
+        <div id="victory" class="hidden" onclick="hideVictory()">
+            <div class="heroName" id="results">Spider-Man...</div>
+            <div class="winBar"><div class="wins"></div></div>
+            <div class="explain">Strength and speed were more than enough to overwhelm this enemy!</div>
+            <input class="hideVictory" onclick="hideVictory()" type="button">
+        </div>
+
+
+        <div id="header">
+            <div id="headerInner"><div id="topInner">
+            <div class="social"></div><div class="logo"></div><div class="catchphrase">Two Heroes. One Winner.</div>
+        </div> <!-- end top inner -->
+            <ul id="navMenu"><li><a href="index.html" title="Battle your favorite heroes against each other!">Battle Room</a></li><li><a href="list.html" class="active" title="search individual character bios and stats">List Characters</a></li><li><a href="#" title="About Us">About</a></li><li><a href="#" title="Kick back and discuss your favorite characters and comics.">Forum</a></li></ul>
+            </div>
+        </div>
+
+<div id="container">
+
+    <div id="listSearch">
+        <input type="text" id="searchBox">
+        <input type="submit" id="searchButton" value="Search">
+    </div> <!-- end listSearch -->
+
+            <div class="bigCaption">5,000 Heroes and counting.</div>
+
+
+    <div id="thumbSlider" class="list_carousel responsive">
+        <img src="img/thumbnails/hulk.jpg" width="200">
+        <img src="img/thumbnails/wolverine.jpg" width="200">
+        <img src="img/thumbnails/spiderman.jpg" width="200">
+        <img src="img/thumbnails/angel.jpg" width="200">
+        <img src="img/thumbnails/silversurfer.jpg" width="200">
+    </div>
+
+
+    <div id="about">
+    <div class="logo about"></div>
+        Hero Smackdown is not affiliated with Marvel.
+    </div>
+
+</div> <!-- end container -->
+<div id="footer">
+<div id="footerInner">
+    <ul id="footerNav">
+    <li><a href="index.html">Battle Room</a></li>
+    <li><a href="list.html">List Characters</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Forum</a></li>
+    </ul>
+    <div class="disclaimer">ALL NAMES OF CHARACTERS AND THE DISTINCTIVE LIKENESS(ES) THEREOF ARE TRADEMARKS OF MARVEL CHARACTER, INC. COPYRIGHT© 2014 MARVEL CHARACTERS, INC. ALL RIGHTS RESERVED.</div>
+</div>
+</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
+        <script src="js/jquery.transit.min.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+$(document).ready(function() {
+    $("#thumbSlider").carouFredSel(
+
+{
+
+ width: '100%',
+        auto    : {
+            items: 3,
+            circular        : true,
+            infinite        : true,
+            duration:30000,
+            easing          : "linear",
+            timeoutDuration : 0,
+            pauseOnHover    : "immediate",
+            transition      : true
+        },
+        scroll: {
+            pauseOnHover: true,
+            onBefore: function() {
+                $(this).children().removeClass( 'hover' );
+            }
+        }
+
+});
+
+    $(".heroThumb").click(function() {
+        window.location.href = $(this).attr('link');
+    });
+
+    var is_paused = false;
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            if (is_paused) {
+                $("#thumbSlider").trigger('resume');
+                is_paused = false;
+            } else {
+                $("#thumbSlider").trigger('pause', 1)
+                is_paused = true;
+            }
+        }
+    });
+});
+</script>
+
+
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

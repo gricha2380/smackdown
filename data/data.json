@@ -1,0 +1,64 @@
+{
+"characters": 
+[
+	{ "name":"Bruce Banner" , "alias":"Hulk",
+	"thumbnail":"img/thumbnails/hulk.jpg", 
+	"Durability":"7",
+	"Energy":"1",
+	"Fighting":"5",
+	"Intelligence":"6",
+	"Speed":"7",
+	"Strength":"7",
+	"description":"Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets.",
+	"id":"1"
+	 }, 
+
+	{ "name":"Peter Parker" , "alias":"Spider-Man",
+	"thumbnail":"img/thumbnails/spiderman.jpg", 
+	"Durability":"3",
+	"Energy":"4",
+	"Fighting":"5",
+	"Intelligence":"4",
+	"Speed":"5",
+	"Strength":"4",
+	"description":"The bite of an irradiated spider granted high-school student Peter Parker incredible powers. When a burglar killed his Uncle Ben, Peter vowed to use those abilities to protect his fellow man, driven by his uncle's words: With great power comes great responsibility!"
+	 ,"id":"2"
+	 }, 
+
+	{ "name":"James Howlett" , "alias":"Wolverine",
+	"thumbnail":"img/thumbnails/wolverine.jpg", 
+	"Durability":"4",
+	"Energy":"4",
+	"Fighting":"4",
+	"Intelligence":"2",
+	"Speed":"3",
+	"Strength":"4",
+	"description":"Born with super-human senses and the power to heal from almost any wound, Wolverine was captured by a secret Canadian organization and given an unbreakable skeleton and claws. Treated like an animal, it took years for him to control himself. Now, he's a premiere member of both the X-Men and the Avengers."
+	 ,"id":"3"
+	 }, 
+	{ "name":"Warren Warrington III" , "alias":"Angel",
+	"thumbnail":"img/thumbnails/angel.jpg", 
+	"Durability":"4",
+	"Energy":"1",
+	"Fighting":"3",
+	"Intelligence":"3",
+	"Speed":"3",
+	"Strength":"3",
+	"description":"Born into an extremely wealthy family, young Warren attended a prestigious East Coast boarding school where he roomed with Cameron Hodge. Warren's life changed forever the day he began sprouting wings from his shoulder blades, and he hid them under his clothes."
+	 ,"id":"4"
+	 } ,
+
+	 { "name":"Norrin Radd" , "alias":"Silver Surfer",
+	"thumbnail":"img/thumbnails/silversurfer.jpg", 
+	"Durability":"7",
+	"Energy":"7",
+	"Fighting":"5",
+	"Intelligence":"4",
+	"Speed":"7",
+	"Strength":"6",
+	"description":"When Zenn-La was threatened by the world-devouring entity known as Galactus, Norrin Radd stood up for his home planet and offered to work for Galactus, finding him new planets to eat, in exchange for saving his own. Years later, the Surfer has protected Earth and many other planets, becoming one of the greatest heroes in the universe."
+	 ,"id":"5"
+	 } 
+
+]
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hero Smackdown</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+<!-- load select menu -->
+    <link href="js/select2/select2.css" rel="stylesheet"/>
+    
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Main HTML -->
+
+        <div id="victory" class="hidden">
+            <div class="heroName" id="results">Spider-Man...</div>
+            <div class="winBar"><div class="wins"></div></div>
+            <div class="explain">Strength and speed were more than enough to overwhelm this enemy!</div>
+            <input class="hideVictory" onclick="hideVictory()" type="button">
+        </div>
+
+
+        <div id="header">
+            <div id="headerInner">
+            <div class="social"></div><div class="logo"></div><div class="catchphrase">Two Heroes. One Winner.</div>
+            </div>
+        </div>
+
+        <div id="container">
+        <div id="leftBox">
+            
+            <img src="img/blank.png" class="heroImg">
+               
+               <input type="hidden" class="bigdrop" id="e6" style="width:400px" value="16340"/>
+
+            <div id="playerOne" class="playerBox">
+                <div class="stats">
+                    <div class="numberHeader"><div class="num">1</div><div class="num">2</div><div class="num">3</div><div class="num">4</div><div class="num">5</div><div class="num">6</div><div class="num">7</div></div>
+                    <div class="durability row">
+                        <div class="rowTitle">Durability</div>
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Energy</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Fighting</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Intelligence</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Speed</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div> 
+                    <div class="energy row">
+                        <div class="rowTitle">Strength</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>                                                                               
+                </div>
+                <div class="bioSpacer"><div class="bio">Born into an extremely wealthy family, young Warren attended a prestigious East Coast boarding school where he roomed with Cameron Hodge. Warren's life changed forever the day he began sprouting wings from his shoulder blades, and he hid them under his clothes.</div></div>
+            </div>
+        </div> <!-- end leftBox -->
+
+        <input type="button"  id="fightButton" onclick="showVictory()">
+
+
+        <div id="rightBox">
+            <img src="img/blank.png" class="heroImg">
+                        <input type="" class="bigdrop" id="playerTwoName" style="width:400px" value="16340"/>
+
+            <div id="playerTwo" class="playerBox">
+                <div class="stats">
+                    <div class="numberHeader"><div class="num">1</div><div class="num">2</div><div class="num">3</div><div class="num">4</div><div class="num">5</div><div class="num">6</div><div class="num">7</div></div>
+                    <div class="durability row">
+                        <div class="rowTitle">Durability</div>
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Energy</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Fighting</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Intelligence</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>
+                    <div class="energy row">
+                        <div class="rowTitle">Speed</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div> 
+                    <div class="energy row">
+                        <div class="rowTitle">Strength</div>                    
+                        <div class="box one fill"></div>
+                        <div class="box two"></div>
+                        <div class="box three"></div>
+                        <div class="box four"></div>
+                        <div class="box five"></div>
+                        <div class="box six"></div>
+                        <div class="box seven"></div>
+                    </div>                                                                               
+                </div>
+                <div class="bioSpacer"><div class="bio">The bite of an irradiated spider granted high-school student Peter Parker incredible powers. When a burglar killed his Uncle Ben, Peter vowed to use those abilities to protect his fellow man, driven by his uncle's words: With great power comes great responsibility!</div></div>
+            </div>
+        </div> <!-- end rightBox -->
+
+<div id="advancedHolder">
+        <div id="advancedOptions">
+            <label class="advancedTitle" for="advancedToggle">Advanced Options</label>
+            <input type="checkbox" id="advancedToggle">
+        </div>
+        <div id="advancedBox">
+            <div class="weightDescription">This section allows you to customize the weight of each stat category. Use this to adjust for any handicap you find necessary.</div>
+            <form name="statForm" action="index.html" method="POST">
+            <div class="statBox">
+                <div class="statName">Durability</div>
+                <select id="setDurability">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Energy</div>
+                <select id="setEnergy">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Fighting</div>
+                <select id="setFighting">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Intelligence</div>
+                <select id="setIntelligence">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Speed</div>
+                <select id="setSpeed">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                </select>
+            </div>
+
+                        <div class="statBox">
+                <div class="statName">Strength</div>
+                <select id="setStrength">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Save Values" id="save"><input type="reset" value="Reset" id="reset">
+        </form>
+        </div>
+    </div> <!-- end advancedHolder -->
+
+        </div> <!-- end container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/select2/select2.js"></script>
+        
+<script>
+
+    function movieFormatResult(movie) {
+        var markup = "<table class='movie-result'><tr>";
+        if (movie.posters !== undefined && movie.posters.thumbnail !== undefined) {
+            markup += "<td class='movie-image'><img src='" + movie.posters.thumbnail + "'/></td>";
+        }
+        markup += "<td class='movie-info'><div class='movie-title'>" + movie.title + "</div>";
+        if (movie.critics_consensus !== undefined) {
+            markup += "<div class='movie-synopsis'>" + movie.critics_consensus + "</div>";
+        }
+        else if (movie.synopsis !== undefined) {
+            markup += "<div class='movie-synopsis'>" + movie.synopsis + "</div>";
+        }
+        markup += "</td></tr></table>";
+        return markup;
+    }
+
+    function movieFormatSelection(movie) {
+        return movie.title;
+    }
+
+</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script id="script_e6">
+                       $("#e6").select2({
+        minimumInputLength: 3,
+        placeholder: 'Search',
+        ajax: {
+            url: "http://www.weighttraining.com/sm/search",
+            dataType: 'jsonp',
+            quietMillis: 100,
+            data: function(term, page) {
+                return {
+                    types: ["exercise"],
+                    limit: -1,
+                    term: term
+                };
+            },
+            results: function(data, page ) {
+                return { results: data.results.exercise }
+            }
+        },
+        formatResult: function(exercise) { 
+            return "<div class='select2-user-result'>" + exercise.term + "</div>"; 
+        },
+        formatSelection: function(exercise) { 
+            //console.log('we arrived at format selection.');
+            console.log(exercise.term);
+            return exercise.term; 
+        },
+        initSelection : function (element, callback) {
+            //console.log('we arrived at init.');
+            var elementText = $(element).attr('data-init-text');
+            //console.log(elementText);
+            callback({"term":elementText});
+        }
+
+            });
+
+
+
+function playerOneStats()
+{
+    var categoryId = document.getElementById('durability');
+
+
+    for (var i = 0; i < data.characters.Durability; i++)
+    {
+        document.categoryId.getElementsByClassName('box')[i].setAttribute('class','fill');
+
+
+    }
+
+}
+        </script>
+
+
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
